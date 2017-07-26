@@ -1,0 +1,29 @@
+{
+  "name": "zcmd",
+  "version": "1.0.0",
+  "description": "用于生成公共配置方案",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "zcmd": "./bin/zcmd.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chen4342024/zcmd.git"
+  },
+  "keywords": [
+    "webpack"
+  ],
+  "author": "andy_chen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chen4342024/zcmd/issues"
+  },
+  "homepage": "https://github.com/chen4342024/zcmd#readme",
+  "dependencies": {
+    "chalk": "^2.0.1",
+    "commander": "^2.11.0"
+  }
+}
