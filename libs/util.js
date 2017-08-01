@@ -5,7 +5,7 @@ var chalk = require('chalk');
 
 module.exports = {
 	/**
-	 * 获取cain config文件
+	 * 读取文件
 	 */
 	readFile: function (filePath, callback) {
 		var config = {};
@@ -24,6 +24,11 @@ module.exports = {
 		}
 	},
 
+	/**
+	 * 写入文件
+	 * @param filePath
+	 * @param content
+	 */
 	writeFile: function (filePath, content) {
 		fs.writeFileSync(filePath, content, {
 			encoding: 'utf8',

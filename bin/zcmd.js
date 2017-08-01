@@ -1,4 +1,5 @@
 #! /usr/bin/env node
+//第一行表示这个执行文件使用node来执行
 
 var program = require('commander'),
 	chalk = require('chalk'),
