@@ -1,0 +1,29 @@
+{
+  "name": "andy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "watch": "./node_modules/.bin/guido watch",
+    "server": "./node_modules/.bin/guido server",
+    "build": "./node_modules/.bin/guido build",
+    "publish": "rm -rf dist/ && ./node_modules/.bin/guido publish",
+    "postcdn": "node ./chore/postcdn.js",
+    "cdnpublish": "NODE_ENV=cdn npm run publish && npm run postcdn"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "guido": "^3.1.6",
+    "superagent": "^3.5.2",
+    "zzc-post-cdn": "^1.0.0"
+  },
+  "dependencies": {
+    "fastclick": "^1.0.6",
+    "remjs": "^1.0.0",
+    "underscore": "^1.8.3",
+    "zepto": "^1.2.0",
+    "zzc-zepto": "^1.2.0"
+  }
+}
