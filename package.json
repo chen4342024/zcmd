@@ -25,5 +25,8 @@
   "dependencies": {
     "chalk": "^2.0.1",
     "commander": "^2.11.0"
+  },
+  "devDependencies": {
+    "prompt": "^1.0.0"
   }
 }
