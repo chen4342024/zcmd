@@ -62,5 +62,25 @@ module.exports = {
 			var key = value.replace("{", "").replace("}", "");
 			return typeof object[key] !== "undefined" ? object[key] : value;
 		});
+	},
+
+	createDir: function (currentPath, dirArray) {
+		dirArray.forEach((dir) => {
+			if (isString(dir)) {
+				let targetPath = path.join(currentPath, dir);
+				if (!fs.existsSync(targetPath)) {
+					console.log(chalk.green('create dir --> ' + targetPath));
+					fs.mkdirSync(targetPath);
+				}
+			}
+		});
 	}
 };
+
+function isObject(obj) {
+	return Object.prototype.toString.call(obj) === '[object Object]';
+}
+
+function isString(obj) {
+	return Object.prototype.toString.call(obj) === '[object String]';
+}

@@ -24,9 +24,10 @@
   "homepage": "https://github.com/chen4342024/zcmd#readme",
   "dependencies": {
     "chalk": "^2.0.1",
-    "commander": "^2.11.0"
+    "commander": "^2.11.0",
+    "prompt": "^1.0.0"
   },
   "devDependencies": {
-    "prompt": "^1.0.0"
+
   }
 }

@@ -65,12 +65,24 @@ var copy = {
 		});
 
 		//复制chore
-		var chorePathFrom = path.resolve(__dirname, '../default/chore');
-		var chorePathTo = path.join(toPath, "chore");
-		if (!fs.existsSync(chorePathTo)) {
-			fs.mkdirSync(chorePathTo);
-		}
-		Util.copyFiles(["generate-entry.js", "postcdn.js", "server.js"], chorePathFrom, chorePathTo)
+		let chorePathFrom = path.resolve(__dirname, '../default/chore');
+		Util.createDir(toPath,['chore']);
+		let chorePathTo = path.join(toPath, "chore");
+		Util.copyFiles(["generate-entry.js", "postcdn.js", "server.js"], chorePathFrom, chorePathTo);
+
+		// 创建目录
+		Util.createDir(toPath, [
+			'src',
+			'src/pages',
+			'src/pages/index',
+			'src/pages/index/components',
+			'src/pages/index/images',
+			'src/components',
+			'src/images',
+			'src/libs',
+			'src/js',
+			'src/css',
+		]);
 	}
 };
 
