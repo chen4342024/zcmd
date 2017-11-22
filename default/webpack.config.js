@@ -64,8 +64,7 @@ let webpackConfig = {
 
     resolve: {
         alias: {
-            'root': path.join(__dirname, 'src'),
-            'zepto': require.resolve('zzc-zepto/dist/zepto-all.min.js')
+            'root': path.join(__dirname, 'src')
         }
     },
 
