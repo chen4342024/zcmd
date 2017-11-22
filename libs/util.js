@@ -37,15 +37,16 @@ module.exports = {
 	},
 
 	copy: function (filePath, dist, contentHandler) {
-		console.log(chalk.green("  正在复制 .. "));
-		console.log(chalk.cyan(filePath) + " ------> " + chalk.yellow(dist));
+		// console.log(chalk.green("  正在复制 .. "));
+		// console.log(chalk.cyan(filePath) + " ------> " + chalk.yellow(dist));
+		console.log(chalk.cyan("copy file ---> " + chalk.cyan(dist)));
 		var self = this;
 		this.readFile(filePath, function (content) {
 			if (contentHandler) {
 				content = contentHandler(content);
 			}
 			self.writeFile(dist, content);
-			console.log(chalk.green("  复制完成 ..."));
+			// console.log(chalk.green("  复制完成 ..."));
 		})
 	},
 

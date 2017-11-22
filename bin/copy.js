@@ -77,11 +77,6 @@ var copy = {
 			'src/pages/index',
 			'src/pages/index/components',
 			'src/pages/index/images',
-			'src/components',
-			'src/images',
-			'src/libs',
-			'src/js',
-			'src/css',
 		]);
 	}
 };
