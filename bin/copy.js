@@ -68,7 +68,7 @@ var copy = {
 		let chorePathFrom = path.resolve(__dirname, '../default/chore');
 		Util.createDir(toPath,['chore']);
 		let chorePathTo = path.join(toPath, "chore");
-		Util.copyFiles(["generate-entry.js", "postcdn.js", "server.js"], chorePathFrom, chorePathTo);
+		Util.copyFiles(["generate-entry.js", "postcdn.js", "server.js","getBranch.js"], chorePathFrom, chorePathTo);
 
 		// 创建目录
 		Util.createDir(toPath, [
