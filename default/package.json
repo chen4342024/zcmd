@@ -15,15 +15,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "cookie-parser": "^1.4.3",
+    "express-http-proxy": "^1.1.0",
     "guido": "^3.1.6",
     "superagent": "^3.5.2",
     "zzc-post-cdn": "^1.0.0"
   },
   "dependencies": {
     "fastclick": "^1.0.6",
-    "remjs": "^1.0.0",
-    "underscore": "^1.8.3",
-    "zepto": "^1.2.0",
-    "zzc-zepto": "^1.2.0"
+    "underscore": "^1.8.3"
   }
 }
