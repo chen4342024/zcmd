@@ -57,8 +57,8 @@ let webpackConfig = {
     devServer: {
         // https: true,
         disableHostCheck: true,
-        publicPath: '/',
-        setup: setup,
+        publicPath: publicPath,
+        before: setup(publicPath),
         port: 9001
     },
 

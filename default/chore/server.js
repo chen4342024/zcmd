@@ -156,7 +156,7 @@ function renderTemplateByServer(req, templateString) {
             '_debug_arr': 1
         };
     } else {
-        // templateString = encodeURIComponent(templateString);
+        templateString = encodeURIComponent(templateString);
         requestBody = {
             '__template_html': templateString,
             '__is_dev_template': 1
