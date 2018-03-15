@@ -34,7 +34,15 @@ module.exports = function setup(publicPath) {
         }));
 
         app.get(/io_js\.php/, (req, res) => {
-            return httpProxy(HOST, {})
+            log(`get io_js --->  ${req.url}`);
+            let rewriteProxy = httpProxy(HOST, {});
+            return rewriteProxy(req, res);
+        });
+
+        app.get(/io_css\.php/, (req, res) => {
+            log(`get io_css --->  ${req.url}`);
+            let rewriteProxy = httpProxy(HOST, {});
+            return rewriteProxy(req, res);
         });
 
         //拦截url中带php,html的请求
