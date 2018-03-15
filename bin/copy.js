@@ -38,7 +38,7 @@ var copy = {
 		})
 	},
 	copy: function (options) {
-		var fromPath = path.resolve(__dirname, '../default');
+		var fromPath = path.resolve(__dirname, '../defaultConfig');
 		const toPath = process.cwd();
 		var fileList = [".editorconfig", ".npmrc", "readme.md", "webpack.config.js"];
 		Util.copyFiles(fileList, fromPath, toPath);
@@ -65,7 +65,7 @@ var copy = {
 		});
 
 		//复制chore
-		let chorePathFrom = path.resolve(__dirname, '../default/chore');
+		let chorePathFrom = path.resolve(__dirname, '../defaultConfig/chore');
 		Util.createDir(toPath,['chore']);
 		let chorePathTo = path.join(toPath, "chore");
 		Util.copyFiles(["generate-entry.js", "postcdn.js", "server.js","getBranch.js"], chorePathFrom, chorePathTo);
