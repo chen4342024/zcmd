@@ -1,0 +1,30 @@
+{
+    "name": "",
+    "version": "",
+    "description": "",
+    "main": "webpack.config.js",
+    "scripts": {
+        "clean": "rm -rf dist",
+        "watch": "./node_modules/.bin/guido watch",
+        "server": "./node_modules/.bin/guido server",
+        "build": "./node_modules/.bin/guido build",
+        "publish": "rm -rf dist/ && ./node_modules/.bin/guido publish",
+        "postcdn": "node ./chore/postcdn.js",
+        "cdnpublish": "NODE_ENV=cdn npm run publish && npm run postcdn && npm run copydir",
+        "copydir": "node ./chore/copydir.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "cookie-parser": "^1.4.3",
+        "directory-copy": "^0.1.0",
+        "express-http-proxy": "^1.1.0",
+        "guido": "^3.1.6",
+        "superagent": "^3.5.2",
+        "zzc-post-cdn": "^1.0.0"
+    },
+    "dependencies": {
+        "fastclick": "^1.0.6",
+        "underscore": "^1.8.3"
+    }
+}
