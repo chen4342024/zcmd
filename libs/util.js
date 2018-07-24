@@ -84,7 +84,7 @@ module.exports = {
             if (info.isDirectory()) {
                 readDirSync(path.join(filePath, ele));
             } else {
-                fileList.push(path.join(filePath, ));
+                fileList.push(path.join(filePath, ele));
             }
         });
         return fileList;
