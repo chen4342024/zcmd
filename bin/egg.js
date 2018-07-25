@@ -12,7 +12,7 @@ var egg = {
         var self = this;
         const toPath = process.cwd();
         if (!Util.isEmptyDir(toPath)) {
-			console.log(chalk.red("当前文件夹不为空，请使用空目录执行此命令"));
+            console.log(chalk.red("当前文件夹不为空，请使用空目录执行此命令"));
             return;
         };
         prompt.message = "开始输入相关信息";
@@ -49,11 +49,14 @@ var egg = {
         const toPath = process.cwd();
         const fromPath = path.resolve(__dirname, '../eggConfig');
 
-        let fileList = [".editorconfig", ".npmrc", "readme.md", "webpack.config.js"];
+        let fileList = [".editorconfig", "readme.md", "webpack.config.js"];
         Util.copyFiles(fileList, fromPath, toPath);
 
         //处理package.json
         handlePackageJson(fromPath, toPath, options);
+
+        // 处理npmrc
+        handleNpmrc(fromPath, toPath);
 
         // 创建目录
         Util.createDir(toPath, [
@@ -71,6 +74,11 @@ var egg = {
         Util.copyFiles(["config.js", "copydir.js", "generate-entry.js", "getBranch.js", "postcdn.js", "server.js"], chorePathFrom, chorePathTo);
     }
 };
+
+function handleNpmrc(fromPath, toPath) {
+    var fromFile = path.join(fromPath, "npmrc.config.txt");
+    Util.copy(fromFile, path.join(toPath, ".npmrc"));
+}
 
 
 function handlePackageJson(fromPath, toPath, options) {
