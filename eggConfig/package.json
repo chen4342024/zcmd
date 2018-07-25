@@ -19,7 +19,7 @@
         "cookie-parser": "^1.4.3",
         "directory-copy": "^0.1.0",
         "express-http-proxy": "^1.1.0",
-        "guido": "^3.1.6",
+        "guido": "^3.6.5",
         "superagent": "^3.5.2",
         "zzc-post-cdn": "^1.0.0"
     },

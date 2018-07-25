@@ -71,16 +71,28 @@ var egg = {
         //复制chore
         let chorePathFrom = path.resolve(fromPath, 'chore');
         let chorePathTo = path.join(toPath, "chore");
-        Util.copyFiles(["config.js", "copydir.js", "generate-entry.js", "getBranch.js", "postcdn.js", "server.js"], chorePathFrom, chorePathTo);
+        let copyFilesList = ["config.js", "copydir.js", "generate-entry.js", "getBranch.js", "postcdn.js", "server.js"];
+        Util.copyFiles(copyFilesList, chorePathFrom, chorePathTo);
+
+        //复制index页面，作为demo
+        let indexPathFrom = path.resolve(fromPath, 'src/pages/index');
+        let indexPathTo = path.join(toPath, "src/pages/index");
+        let copyIndexFilesList = ["index.scss", "index.view.hbs", "index.view.js"];
+        Util.copyFiles(copyIndexFilesList, indexPathFrom, indexPathTo);
     }
 };
 
+/**
+ * 处理npmrc文件
+ */
 function handleNpmrc(fromPath, toPath) {
     var fromFile = path.join(fromPath, "npmrc.config.txt");
     Util.copy(fromFile, path.join(toPath, ".npmrc"));
 }
 
-
+/**
+ * 处理package.json文件
+ */
 function handlePackageJson(fromPath, toPath, options) {
     var packageJson = "package.json";
     var configFromPath = path.join(fromPath, packageJson);

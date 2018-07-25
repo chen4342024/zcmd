@@ -12,7 +12,7 @@ const REG_VIEW_HANDLEBARS_NAME_RULE = /(\.view)$/;
 const REG_INDEX_NAME_RULE = /(\.index)$/;
 const useHBS = true;
 
-module.exports = function () {
+module.exports = function() {
     let entry = {};
     let pagePath = path.resolve(PROJECT_PATH, './src/pages');
 
@@ -22,7 +22,10 @@ module.exports = function () {
         matchBase: true,
         realpath: true
     });
-    pagesName.map(function (pageName) {
+    pagesName.map(function(pageName) {
+        //由于有时候会出现路径不是完全路径的情况，故加上这局
+        pageName = path.resolve(pagePath, pageName);
+
         // 过来不是page的目录，例如：components/
         if (!checkPage(pageName)) {
             return;
@@ -32,7 +35,7 @@ module.exports = function () {
         outputName = outputName.replace(REG_VIEW_HANDLEBARS_NAME_RULE, '');
 
         let groupName = path.relative(pagePath, path.dirname(pageName));
-        outputName =  groupName + '.' + outputName;
+        outputName = groupName + '.' + outputName;
         outputName = outputName.replace(REG_INDEX_NAME_RULE, '');
         entry[outputName] = jsEntryPath(pageName);
         console.log("entry ---> " + outputName + ", " + jsEntryPath(pageName));
